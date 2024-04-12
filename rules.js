@@ -17,7 +17,25 @@ class Start extends Scene {
 class Location extends Scene {
     create(key) {
         let locationData = this.engine.storyData.Locations[key];
-        this.engine.show(locationData.Body);
+        console.log(this.engine.plants)
+        console.log(this.engine.hasKey)
+        if(this.engine.plants == false && locationData.Body2)
+        {
+            this.engine.show(locationData.Body2);
+            if(locationData.Choices2 && locationData.Choices2.length > 0)
+            {
+                for(let choice of locationData.Choices2) 
+                { 
+                    this.engine.addChoice(choice.Text, choice); 
+                }
+            }
+            return;
+        }
+        else
+        {
+            this.engine.show(locationData.Body);
+
+        }
         
         if(locationData.Choices && locationData.Choices.length > 0) { 
             if(this.engine.hasKey && locationData.Key && locationData.Key.length > 0)
@@ -46,6 +64,12 @@ class Location extends Scene {
         {
             this.engine.show("&gt; "+ choice.Text);
             this.engine.hasKey = true;
+            this.engine.gotoScene(Location, choice.Target);
+        }
+        else if (choice.Target == "Destroy_Plants")
+        {
+            this.engine.show("&gt; "+ choice.Text);
+            this.engine.plants = false;
             this.engine.gotoScene(Location, choice.Target);
         }
         else if(choice) 

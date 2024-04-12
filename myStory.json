@@ -36,15 +36,45 @@
             ]
         },
         "Porch": {
-            "Body": "As you wake up on a cool morning, you notice the neighboring human's cabin appears empty.",
+            "Body": "The porch is sturdy, has a swing set for the human's entertainment, and some caged plants.",
+            "Body2": "The porch is strewn with the remains of the caged plants you freed.",
             "Choices": [
                 {
-                    "Text": "Go to front door.",
-                    "Target": "Front_Door"
+                    "Text": "Check the backyard for other options",
+                    "Target": "Back_Yard"
                 },
                 {
-                    "Text": "Go to back yard.",
+                    "Text": "Inspect the mysterious caged plants.",
+                    "Target": "Plants"
+                }
+            ],
+            "Choices2":
+            [
+                {
+                    "Text": "Check the backyard for other options",
                     "Target": "Back_Yard"
+                }
+            ]
+        },
+        "Plants": {
+            "Body": "The plants are enclosed in a stone-like material, the humans are clearly fond of torture.",
+            "Choices": [
+                {
+                    "Text": "Free the plants.",
+                    "Target": "Destroy_Plants"
+                },
+                {
+                    "Text": "Let them be, you're on a mission after all.",
+                    "Target": "Porch"
+                }
+            ]
+        },
+        "Destroy_Plants": {
+            "Body": "You shatter the plants cages, freeing them from oppression, and experiencing a cathartic release when doing so.",
+            "Choices": [
+                {
+                    "Text": "Back to the porch.",
+                    "Target": "Porch"
                 }
             ]
         },
