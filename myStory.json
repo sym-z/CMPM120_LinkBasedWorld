@@ -191,21 +191,52 @@
                     "Target": "Front_Door"
                 },
                 {
-                    "Text": "Inspect the effigy.",
-                    "Target": "Effigy"
+                    "Text": "Try to access the back door.",
+                    "Target": "Back_Door"
                 }
             ]
         },
         "Effigy": {
-            "Body": "You notice various objects meant to intimidate the wildlife on the porch, some sort of glowing purple effigy meant to destroy insects, and spikes strewn on the inside of the roof, surely meant to impale nesting birds. There is some sort of weird painted stone near the door.",
+            "Body": "The effigy is in the shape of an upside down pyramid. It glows with a faint purple light. You notice the heaps of insect corpses underneath the effigy, it's clear that this is an altar that humans make sacrifices to. It hums with power.",
             "Choices": [
                 {
-                    "Text": "Inspect the stone.",
-                    "Target": "Stone"
+                    "Text": "Make an offering.",
+                    "Target": "Offering"
                 },
                 {
-                    "Text": "Inspect the effigy.",
-                    "Target": "Effigy"
+                    "Text": "Keep looking around the back door.",
+                    "Target": "Back_Door"
+                }
+            ]
+        },
+        "Offering": {
+            "Body": "You decided to make an offering to this deity that likely has given the humans their power. The greed for power overwhelms you.",
+            "Choices": [
+                {
+                    "Text": "Offer chunk of fur.",
+                    "Target": "Fur"
+                },
+                {
+                    "Text": "Destroy the effigy, its power is too great.",
+                    "Target": "Back_Door"
+                }
+            ]
+        },
+        "Fur": {
+            "Body": "You tear out a chunk of your fur with your teeth, and toss it towards the effigy. Causing the effigy to arc and pop with power. You can already feel the power coursing through you.",
+            "Choices": [
+                {
+                    "Text": "Return to the back door, with your newfound power.",
+                    "Target": "Back_Door"
+                }
+            ]
+        },
+        "Vandal": {
+            "Body": "You take a swipe at the effigy with your paw, and it swings up into the air, and turns and flies towards you!",
+            "Choices": [
+                {
+                    "Text": "Turn and run!",
+                    "Target": "Back_Door"
                 }
             ]
         },
@@ -215,7 +246,6 @@
         "Good_End":
         {
             "Body": "You choose to leave the humans to their devices, and seek food elsewhere, calling off what was sure to be the heist of the century."
-
         }
     }
 }
