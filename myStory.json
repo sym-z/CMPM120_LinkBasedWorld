@@ -1,27 +1,27 @@
 {
     "Title": "A Bear's Heist",
     "Credits": "Created by Jack Sims",
-    "InitialLocation": "Front Yard",
+    "InitialLocation": "Front_Yard",
     "Locations": {
-        "Front Yard": {
+        "Front_Yard": {
             "Body": "As you wake up on a cool morning, you notice the neighboring human's cabin appears empty.",
             "Choices": [
                 {
                     "Text": "Go to front door.",
-                    "Target": "Front Door"
+                    "Target": "Front_Door"
                 },
                 {
                     "Text": "Go to back yard.",
-                    "Target": "Back Yard"
+                    "Target": "Back_Yard"
                 }
             ]
         },
-        "Front Door": {
+        "Front_Door": {
             "Body": "You peek in the front door, and see the house is empty, you smell food inside, but have no idea how to get in.",
             "Choices": [
                 {
                     "Text": "Check the back yard for a way in.",
-                    "Target": "Back Yard"
+                    "Target": "Back_Yard"
                 },
                 {
                     "Text": "Look around the porch.",
@@ -31,11 +31,24 @@
             "Key":[
             {
                 "Text": "Use Key on Front Door.",
-                "Target": "Enter Front"
+                "Target": "Enter_Front"
             }
             ]
         },
-        "Enter Front": {
+        "Porch": {
+            "Body": "As you wake up on a cool morning, you notice the neighboring human's cabin appears empty.",
+            "Choices": [
+                {
+                    "Text": "Go to front door.",
+                    "Target": "Front_Door"
+                },
+                {
+                    "Text": "Go to back yard.",
+                    "Target": "Back_Yard"
+                }
+            ]
+        },
+        "Enter_Front": {
             "Body": "The stone is smooth, but doesn't look like any stone you have seen before. It looks fake, like the humans have found a way to alchemize it.",
             "Choices": [
                 {
@@ -44,24 +57,24 @@
                 },
                 {
                     "Text": "Leave the stone be, who knows what latent power it might hold.",
-                    "Target": "Back Door"
+                    "Target": "Back_Door"
                 }
             ]
         },
-        "Back Yard": {
+        "Back_Yard": {
             "Body": "The backyard seems bigger than the last time you were here, it seems like the humans have cut the grass. You notice a hot spring that the humans have built.",
             "Choices": [
                 {
                     "Text": "Take a dip in the hot tub.",
-                    "Target": "Hot Tub"
+                    "Target": "Hot_Tub"
                 },
                 {
                     "Text": "Approach the back door, maybe the humans haven't fully defended their nest?",
-                    "Target": "Back Door"
+                    "Target": "Back_Door"
                 }
             ]
         },
-        "Hot Tub": {
+        "Hot_Tub": {
             "Body": "You take a plunge in the hot tub, and feel the warm water soothe your stress.",
             "Choices": [
                 {
@@ -70,7 +83,7 @@
                 },
                 {
                     "Text": "Enough relaxation for you, there's a heist to enact.",
-                    "Target": "Back Yard"
+                    "Target": "Back_Yard"
                 }
             ]
         },
@@ -83,11 +96,11 @@
                 },
                 {
                     "Text": "Choose cynicism, after all, a bear's gotta eat.",
-                    "Target": "Back Yard"
+                    "Target": "Back_Yard"
                 }
             ]
         },
-        "Back Door": {
+        "Back_Door": {
             "Body": "You notice various objects meant to intimidate the wildlife on the porch, some sort of glowing purple effigy meant to destroy insects, and spikes strewn on the inside of the roof, surely meant to impale nesting birds. There is some sort of weird painted stone near the door.",
             "Choices": [
                 {
@@ -102,11 +115,11 @@
             "Key":[
             {
                 "Text": "Use Key on Back Door.",
-                "Target": "Enter Back"
+                "Target": "Enter_Back"
             }
             ]
         },
-        "Enter Back": {
+        "Enter_Back": {
             "Body": "The stone is smooth, but doesn't look like any stone you have seen before. It looks fake, like the humans have found a way to alchemize it.",
             "Choices": [
                 {
@@ -115,7 +128,7 @@
                 },
                 {
                     "Text": "Leave the stone be, who knows what latent power it might hold.",
-                    "Target": "Back Door"
+                    "Target": "Back_Door"
                 }
             ]
         },
@@ -128,7 +141,7 @@
                 },
                 {
                     "Text": "Leave the stone be, who knows what latent power it might hold.",
-                    "Target": "Back Door"
+                    "Target": "Back_Door"
                 }
             ]
         },
@@ -137,20 +150,20 @@
             "Choices": [
                 {
                     "Text": "Pick up the key.",
-                    "Target": "Key Get"
+                    "Target": "Key_Get"
                 },
                 {
                     "Text": "Back to the back yard.",
-                    "Target": "Back Yard"
+                    "Target": "Back_Yard"
                 }
             ]
         },
-        "Key Get": {
+        "Key_Get": {
             "Body": "You pick up the key in your mouth, it is cool to the touch, now we can try to gain access to the door.",
             "Choices": [
                 {
                     "Text": "Go to Front Door",
-                    "Target": "Stone"
+                    "Target": "Front_Door"
                 },
                 {
                     "Text": "Inspect the effigy.",
