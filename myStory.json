@@ -79,17 +79,16 @@
             ]
         },
         "Enter_Front": {
-            "Body": "The stone is smooth, but doesn't look like any stone you have seen before. It looks fake, like the humans have found a way to alchemize it.",
+            "Body": "You attempt to use the key to unlock the door, and you succeed, smashing the door to bits.",
             "Choices": [
                 {
-                    "Text": "Destroy the abomination.",
-                    "Target": "Hideakey"
-                },
-                {
-                    "Text": "Leave the stone be, who knows what latent power it might hold.",
-                    "Target": "Back_Door"
-                }
+                    "Text": "Scavenge for food",
+                    "Target": "Food_Get"
+                }            
             ]
+        },
+        "Food_Get": {
+            "Body": "You eat to your hearts content, and bring some food back to your den. Mission Success."
         },
         "Back_Yard": {
             "Body": "The backyard seems bigger than the last time you were here, it seems like the humans have cut the grass. You notice a hot spring that the humans have built.",
@@ -122,7 +121,7 @@
             "Choices": [
                 {
                     "Text": "Choose peace, leave the humans to their food.",
-                    "Target": "End"
+                    "Target": "Good_End"
                 },
                 {
                     "Text": "Choose cynicism, after all, a bear's gotta eat.",
@@ -150,16 +149,12 @@
             ]
         },
         "Enter_Back": {
-            "Body": "The stone is smooth, but doesn't look like any stone you have seen before. It looks fake, like the humans have found a way to alchemize it.",
+            "Body": "You attempt to use the key to unlock the door, and you succeed, smashing the door to bits.",
             "Choices": [
                 {
-                    "Text": "Destroy the abomination.",
-                    "Target": "Hideakey"
-                },
-                {
-                    "Text": "Leave the stone be, who knows what latent power it might hold.",
-                    "Target": "Back_Door"
-                }
+                    "Text": "Scavenge for food",
+                    "Target": "Food_Get"
+                }            
             ]
         },
         "Stone": {
@@ -215,7 +210,12 @@
             ]
         },
         "End": {
+            "Body": "You run away with your newfound loot."
+        },
+        "Good_End":
+        {
             "Body": "You choose to leave the humans to their devices, and seek food elsewhere, calling off what was sure to be the heist of the century."
+
         }
     }
 }

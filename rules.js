@@ -17,8 +17,9 @@ class Start extends Scene {
 class Location extends Scene {
     create(key) {
         let locationData = this.engine.storyData.Locations[key];
-        console.log(this.engine.plants)
-        console.log(this.engine.hasKey)
+        console.log(key);
+        console.log(this.engine.plants);
+        console.log(this.engine.hasKey);
         if(this.engine.plants == false && locationData.Body2)
         {
             this.engine.show(locationData.Body2);
@@ -33,28 +34,27 @@ class Location extends Scene {
         }
         else
         {
-            this.engine.show(locationData.Body);
-
-        }
-        
-        if(locationData.Choices && locationData.Choices.length > 0) { 
-            if(this.engine.hasKey && locationData.Key && locationData.Key.length > 0)
-            {
-                for(let opt of locationData.Key)
-                {
-                    this.engine.addChoice(opt.Text, opt)
+            if (locationData.Choices && locationData.Choices.length > 0) {
+                this.engine.show(locationData.Body);
+                if (this.engine.hasKey && locationData.Key && locationData.Key.length > 0) {
+                    for (let opt of locationData.Key) {
+                        this.engine.addChoice(opt.Text, opt)
+                    }
                 }
+                for (let choice of locationData.Choices) {
+                    this.engine.addChoice(choice.Text, choice);
+                }
+            } else {
+                this.engine.show(locationData.Body)
+                this.engine.gotoScene(End);
             }
-            for(let choice of locationData.Choices) { 
-                this.engine.addChoice(choice.Text, choice); 
-            }
-        } else {
-            this.engine.addChoice("The end.")
         }
     }
 
     handleChoice(choice) {
-        if(choice.Target == "Hot_Tub")
+        console.log(choice);
+        if(choice == this.engine.storyData.Locations["End"]) this.engine.gotoScene(End);
+        else if(choice.Target == "Hot_Tub")
         {
             this.engine.show("&gt; "+ choice.Text);
             this.engine.gotoScene(Tub);
