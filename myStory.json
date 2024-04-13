@@ -218,7 +218,7 @@
                 },
                 {
                     "Text": "Destroy the effigy, its power is too great.",
-                    "Target": "Back_Door"
+                    "Target": "Vandal"
                 }
             ]
         },
