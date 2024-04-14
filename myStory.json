@@ -100,6 +100,10 @@
                 {
                     "Text": "Approach the back door, maybe the humans haven't fully defended their nest?",
                     "Target": "Back_Door"
+                },
+                {
+                    "Text": "Head back to the front yard.",
+                    "Target": "Front_Yard"
                 }
             ]
         },
@@ -159,6 +163,7 @@
         },
         "Stone": {
             "Body": "The stone is smooth, but doesn't look like any stone you have seen before. It looks fake, like the humans have found a way to alchemize it.",
+            "Body2": "The stone has been destroyed, and now you carry the key to enter the human's den.",
             "Choices": [
                 {
                     "Text": "Destroy the abomination.",
@@ -166,6 +171,12 @@
                 },
                 {
                     "Text": "Leave the stone be, who knows what latent power it might hold.",
+                    "Target": "Back_Door"
+                }
+            ],
+            "Choices2": [
+                {
+                    "Text": "Keep looking around the back door.",
                     "Target": "Back_Door"
                 }
             ]
