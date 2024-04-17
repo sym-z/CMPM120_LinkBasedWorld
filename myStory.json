@@ -7,11 +7,11 @@
             "Body": "As you wake up on a cool morning, you notice the neighboring human's cabin appears empty.",
             "Choices": [
                 {
-                    "Text": "Go to front door.",
+                    "Text": "Go to the front door.",
                     "Target": "Front_Door"
                 },
                 {
-                    "Text": "Go to back yard.",
+                    "Text": "Go to the back yard.",
                     "Target": "Back_Yard"
                 }
             ]
@@ -98,7 +98,7 @@
                     "Target": "Hot_Tub"
                 },
                 {
-                    "Text": "Approach the back door, maybe the humans haven't fully defended their nest?",
+                    "Text": "Approach the back door.",
                     "Target": "Back_Door"
                 },
                 {
