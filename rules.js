@@ -4,6 +4,7 @@ class Start extends Scene {
         let data = this.engine.storyData;
         this.engine.setTitle(data.Title); 
         this.engine.addChoice("Wake up.");
+        this.engine.hasKey = false
     }
 
     handleChoice() {
@@ -13,10 +14,11 @@ class Start extends Scene {
 
 class Location extends Scene {
     create(key) {
+        console.log(this.engine.hasKey)
         // Store into a variable so that I do not have to write out the long name
         let locationData = this.engine.storyData.Locations[key];
         // Show the proper dialogue if the plants have already been destroyed
-        if(this.engine.plants == false && locationData.Body2)
+        if(this.engine.plants == false && locationData.Body2 && key == "Plants")
         {
             this.engine.show(locationData.Body2);
             if(locationData.Choices2 && locationData.Choices2.length > 0)
@@ -29,7 +31,7 @@ class Location extends Scene {
             return;
         }        
         // Show the proper dialogue if the stone has already been destroyed
-        else if(this.engine.hasKey == true && locationData.Body2)
+        else if(this.engine.hasKey == true && locationData.Body2 && key == "Stone")
         {
             this.engine.show(locationData.Body2);
             if(locationData.Choices2 && locationData.Choices2.length > 0)
