@@ -187,10 +187,6 @@
                 {
                     "Text": "Pick up the key.",
                     "Target": "Key_Get"
-                },
-                {
-                    "Text": "Back to the back yard.",
-                    "Target": "Back_Yard"
                 }
             ]
         },
@@ -260,3 +256,4 @@
         }
     }
 }
+
