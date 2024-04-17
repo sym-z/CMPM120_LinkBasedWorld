@@ -4,7 +4,7 @@
     "InitialLocation": "Front_Yard",
     "Locations": {
         "Front_Yard": {
-            "Body": "As you wake up on a cool morning, you notice the neighboring human's cabin appears empty.",
+            "Body": "You notice the neighboring human's cabin appears empty.",
             "Choices": [
                 {
                     "Text": "Go to the front door.",
@@ -98,7 +98,7 @@
                     "Target": "Hot_Tub"
                 },
                 {
-                    "Text": "Approach the back door.",
+                    "Text": "Approach the back door",
                     "Target": "Back_Door"
                 },
                 {

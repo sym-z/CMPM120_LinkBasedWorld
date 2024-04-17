@@ -7,6 +7,7 @@ class Engine {
 
         this.firstSceneClass = firstSceneClass;
         this.storyDataUrl = storyDataUrl;
+        // Initialize variables to manage continutity and provide the key
         this.hasKey = false;
         this.plants = true;
         this.header = document.body.appendChild(document.createElement("h1"));

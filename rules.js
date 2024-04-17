@@ -102,7 +102,7 @@ class Location extends Scene {
     }
 }
 // Custom Scene for Location Specific Interactive Mechanism
-class Tub extends Scene
+class Tub extends Location
 {
     create()
     {
