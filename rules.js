@@ -1,4 +1,6 @@
-
+// Jack Sims
+// CMPM 120
+// Link Based World Assignment
 class Start extends Scene {
     create() {
         let data = this.engine.storyData;
@@ -85,9 +87,6 @@ class Location extends Scene {
 
     handleChoice(choice) {
         // Do not attempt to use the dot operator on an ending scene, so you avoid messing with undefined data members
-        console.log(this.inTub)
-        console.log(this.hasKey)
-        console.log(this.plants)
         if (choice == this.engine.storyData.Locations["End"]) this.engine.gotoScene(End);
         else if (choice.Target == "Back_Yard") {
 
