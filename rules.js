@@ -1,6 +1,10 @@
 // Jack Sims
 // CMPM 120
 // Link Based World Assignment
+let hasKey = false;
+let plants = true;
+let inTub = false;
+
 class Start extends Scene {
     create() {
         let data = this.engine.storyData;
@@ -16,13 +20,10 @@ class Start extends Scene {
 class Location extends Scene {
 
     create(key) {
-        this.hasKey = false;
-        this.plants = true;
-        this.inTub = false;
         // Store into a variable so that I do not have to write out the long name
         let locationData = this.engine.storyData.Locations[key];
         // Show the proper dialogue if the plants have already been destroyed
-        if (this.plants == false && locationData.Body2 && key == "Plants") {
+        if (plants == false && locationData.Body2 && key == "Plants") {
             this.engine.show(locationData.Body2);
             if (locationData.Choices2 && locationData.Choices2.length > 0) {
                 for (let choice of locationData.Choices2) {
@@ -32,7 +33,7 @@ class Location extends Scene {
             return;
         }
         // Show the proper dialogue if the stone has already been destroyed
-        else if (this.hasKey == true && locationData.Body2 && key == "Stone") {
+        else if (hasKey == true && locationData.Body2 && key == "Stone") {
             this.engine.show(locationData.Body2);
             if (locationData.Choices2 && locationData.Choices2.length > 0) {
                 for (let choice of locationData.Choices2) {
@@ -45,7 +46,7 @@ class Location extends Scene {
             // Standard case
             if (locationData.Choices && locationData.Choices.length > 0) {
                 this.engine.show(locationData.Body);
-                if (this.hasKey && locationData.Key && locationData.Key.length > 0) {
+                if (hasKey && locationData.Key && locationData.Key.length > 0) {
                     for (let opt of locationData.Key) {
                         this.engine.addChoice(opt.Text, opt)
                     }
@@ -54,7 +55,7 @@ class Location extends Scene {
                     this.engine.addChoice(choice.Text, choice);
                 }
             } else {
-                if (locationData == this.engine.storyData.Locations["End"]) {
+                if (key == "Food_Get") {
 
                     this.engine.show(locationData.Body);
 
@@ -64,7 +65,7 @@ class Location extends Scene {
 
                 }
 
-                else if (locationData == this.engine.storyData.Locations["Good_End"]) {
+                else if (key == "Good_End") {
 
                     this.engine.show(locationData.Body);
 
@@ -76,8 +77,9 @@ class Location extends Scene {
 
                 else {
 
+                    console.log(key)
                     this.engine.show(locationData.Body);
-
+                    console.log(locationData.Body)
                     this.engine.gotoScene(Tub);
 
                 }
@@ -87,10 +89,11 @@ class Location extends Scene {
 
     handleChoice(choice) {
         // Do not attempt to use the dot operator on an ending scene, so you avoid messing with undefined data members
+        console.log("Has key" + hasKey)
         if (choice == this.engine.storyData.Locations["End"]) this.engine.gotoScene(End);
         else if (choice.Target == "Back_Yard") {
 
-            this.inTub = false;
+            inTub = false;
 
             this.engine.show("&gt; " + choice.Text);
 
@@ -99,20 +102,21 @@ class Location extends Scene {
         }
         else if (choice.Target == "Hot_Tub") {
             this.engine.show("&gt; " + choice.Text);
-  
+            inTub = true;
             this.engine.gotoScene(Tub);
             return;
         }
         // Set variable for lock and key puzzle
         else if (choice.Target == "Key_Get") {
             this.engine.show("&gt; " + choice.Text);
-            this.hasKey = true;
+            console.log("pickup key")
+            hasKey = true;
             this.engine.gotoScene(Location, choice.Target);
         }
         // Set variable for option to destroy potted plants
         else if (choice.Target == "Destroy_Plants") {
             this.engine.show("&gt; " + choice.Text);
-            this.plants = false;
+            plants = false;
             this.engine.gotoScene(Location, choice.Target);
         }
         // Standard case
@@ -130,8 +134,17 @@ class Location extends Scene {
 class Tub extends Location {
     create() {
         // Shows this text then calls the scene in the json file.
+        console.log("hasKey" + hasKey)
+        console.log("plants" + plants)
+        console.log("inTub" + inTub)
 
-        this.engine.show("&gt; " + "The hot tub sizzles and bubbles.");
+        if (!this.engine.inTub) {
+
+            this.engine.show("&gt; " + "As you enter it, the hot tub sizzles and bubbles.");
+
+        }
+
+        this.engine.inTub = true;
 
         let jetChoice = { Text: 'Activate Jets', Target: 'Jets' }
 
@@ -140,7 +153,14 @@ class Tub extends Location {
         this.engine.addChoice(jetChoice.Text, jetChoice);
 
         this.engine.addChoice(musicChoice.Text, musicChoice);
- 
+
+        if (!plants) {
+
+            let plantChoice = { Text: 'Contemplate the similarity between the imprisonment of the plants and your theft.', Target: 'Contemplation' }
+
+            this.engine.addChoice(plantChoice.Text, plantChoice);
+
+        }
         this.engine.gotoScene(Location, "Hot_Tub");
     }
 }
