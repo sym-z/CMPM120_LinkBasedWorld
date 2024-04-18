@@ -3,16 +3,19 @@ class Engine {
         window.onload = () => new Engine(...args);
     }
 
+
     constructor(firstSceneClass, storyDataUrl) {
+
 
         this.firstSceneClass = firstSceneClass;
         this.storyDataUrl = storyDataUrl;
-        // Initialize variables to manage continutity and provide the key
         this.hasKey = false;
         this.plants = true;
+        this.inTub = false;
         this.header = document.body.appendChild(document.createElement("h1"));
         this.output = document.body.appendChild(document.createElement("div"));
         this.actionsContainer = document.body.appendChild(document.createElement("div"));
+
 
         fetch(storyDataUrl).then(
             (response) => response.json()
@@ -24,26 +27,30 @@ class Engine {
         );
     }
 
+
     gotoScene(sceneClass, data) {
         this.scene = new sceneClass(this);
         this.scene.create(data);
     }
 
+
     addChoice(action, data) {
         let button = this.actionsContainer.appendChild(document.createElement("button"));
         button.innerText = action;
         button.onclick = () => {
-            while(this.actionsContainer.firstChild) {
+            while (this.actionsContainer.firstChild) {
                 this.actionsContainer.removeChild(this.actionsContainer.firstChild)
             }
             this.scene.handleChoice(data);
         }
     }
 
+
     setTitle(title) {
         document.title = title;
         this.header.innerText = title;
     }
+
 
     show(msg) {
         let div = document.createElement("div");
@@ -52,14 +59,18 @@ class Engine {
     }
 }
 
+
 class Scene {
     constructor(engine) {
         this.engine = engine;
     }
 
+
     create() { }
 
+
     update() { }
+
 
     handleChoice(action) {
         console.warn('no choice handler on scene ', this);

@@ -28,11 +28,11 @@
                     "Target": "Porch"
                 }
             ],
-            "Key":[
-            {
-                "Text": "Use Key on Front Door.",
-                "Target": "Enter_Front"
-            }
+            "Key": [
+                {
+                    "Text": "Use Key on Front Door.",
+                    "Target": "Enter_Front"
+                }
             ]
         },
         "Porch": {
@@ -48,8 +48,7 @@
                     "Target": "Plants"
                 }
             ],
-            "Choices2":
-            [
+            "Choices2": [
                 {
                     "Text": "Check the backyard for other options",
                     "Target": "Back_Yard"
@@ -84,7 +83,7 @@
                 {
                     "Text": "Scavenge for food",
                     "Target": "Food_Get"
-                }            
+                }
             ]
         },
         "Food_Get": {
@@ -108,7 +107,7 @@
             ]
         },
         "Hot_Tub": {
-            "Body": "You take a plunge in the hot tub, and feel the warm water soothe your stress.",
+            "Body": "*blub blub blub blub*",
             "Choices": [
                 {
                     "Text": "Contemplate your Bear-Existence",
@@ -119,6 +118,12 @@
                     "Target": "Back_Yard"
                 }
             ]
+        },
+        "Music": {
+            "Body": "A symphony starts playing through the hot tub speakers."
+        },
+        "Jets": {
+            "Body": "The jets in the tub fire up and soothe your muscles."
         },
         "Contemplation": {
             "Body": "As you relax in the hot tub, you question your reasoning for wanting to steal food from the humans, and what it means to be a bear at all.",
@@ -145,11 +150,11 @@
                     "Target": "Effigy"
                 }
             ],
-            "Key":[
-            {
-                "Text": "Use Key on Back Door.",
-                "Target": "Enter_Back"
-            }
+            "Key": [
+                {
+                    "Text": "Use Key on Back Door.",
+                    "Target": "Enter_Back"
+                }
             ]
         },
         "Enter_Back": {
@@ -158,7 +163,7 @@
                 {
                     "Text": "Scavenge for food",
                     "Target": "Food_Get"
-                }            
+                }
             ]
         },
         "Stone": {
@@ -250,10 +255,8 @@
         "End": {
             "Body": "The End."
         },
-        "Good_End":
-        {
+        "Good_End": {
             "Body": "You choose to leave the humans to their devices, and seek food elsewhere, calling off what was sure to be the heist of the century."
         }
     }
 }
-
